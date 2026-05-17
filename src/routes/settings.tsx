@@ -31,7 +31,7 @@ function Page() {
   };
   const changePin = async () => {
     if (newPin.length < 4) return toast.error("Min 4 digits");
-    const { error } = await supabase.rpc("set_withdrawal_pin", { p_current: curPin || null, p_new: newPin });
+    const { error } = await supabase.rpc("set_withdrawal_pin", { p_current: curPin || (null as unknown as string), p_new: newPin });
     if (error) return toast.error(error.message);
     toast.success("PIN updated"); setCurPin(""); setNewPin("");
   };

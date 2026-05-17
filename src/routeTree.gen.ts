@@ -9,11 +9,52 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WithdrawRouteImport } from './routes/withdraw'
+import { Route as TransactionsRouteImport } from './routes/transactions'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as TeamRouteImport } from './routes/team'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as RobotsRouteImport } from './routes/robots'
 import { Route as RegisterRouteImport } from './routes/register'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as InviteRouteImport } from './routes/invite'
+import { Route as DepositRouteImport } from './routes/deposit'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as Char91_authenticatedChar93RouteImport } from './routes/[_authenticated]'
 import { Route as IndexRouteImport } from './routes/index'
 
+const WithdrawRoute = WithdrawRouteImport.update({
+  id: '/withdraw',
+  path: '/withdraw',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TransactionsRoute = TransactionsRouteImport.update({
+  id: '/transactions',
+  path: '/transactions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamRoute = TeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RobotsRoute = RobotsRouteImport.update({
+  id: '/robots',
+  path: '/robots',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RegisterRoute = RegisterRouteImport.update({
   id: '/register',
   path: '/register',
@@ -22,6 +63,31 @@ const RegisterRoute = RegisterRouteImport.update({
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InviteRoute = InviteRouteImport.update({
+  id: '/invite',
+  path: '/invite',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DepositRoute = DepositRouteImport.update({
+  id: '/deposit',
+  path: '/deposit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const Char91_authenticatedChar93Route =
@@ -39,39 +105,171 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/_authenticated': typeof Char91_authenticatedChar93Route
+  '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/dashboard': typeof DashboardRoute
+  '/deposit': typeof DepositRoute
+  '/invite': typeof InviteRoute
   '/login': typeof LoginRoute
   '/register': typeof RegisterRoute
+  '/robots': typeof RobotsRoute
+  '/settings': typeof SettingsRoute
+  '/team': typeof TeamRoute
+  '/terms': typeof TermsRoute
+  '/transactions': typeof TransactionsRoute
+  '/withdraw': typeof WithdrawRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/_authenticated': typeof Char91_authenticatedChar93Route
+  '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/dashboard': typeof DashboardRoute
+  '/deposit': typeof DepositRoute
+  '/invite': typeof InviteRoute
   '/login': typeof LoginRoute
   '/register': typeof RegisterRoute
+  '/robots': typeof RobotsRoute
+  '/settings': typeof SettingsRoute
+  '/team': typeof TeamRoute
+  '/terms': typeof TermsRoute
+  '/transactions': typeof TransactionsRoute
+  '/withdraw': typeof WithdrawRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_authenticated': typeof Char91_authenticatedChar93Route
+  '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/dashboard': typeof DashboardRoute
+  '/deposit': typeof DepositRoute
+  '/invite': typeof InviteRoute
   '/login': typeof LoginRoute
   '/register': typeof RegisterRoute
+  '/robots': typeof RobotsRoute
+  '/settings': typeof SettingsRoute
+  '/team': typeof TeamRoute
+  '/terms': typeof TermsRoute
+  '/transactions': typeof TransactionsRoute
+  '/withdraw': typeof WithdrawRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/_authenticated' | '/login' | '/register'
+  fullPaths:
+    | '/'
+    | '/_authenticated'
+    | '/about'
+    | '/admin'
+    | '/dashboard'
+    | '/deposit'
+    | '/invite'
+    | '/login'
+    | '/register'
+    | '/robots'
+    | '/settings'
+    | '/team'
+    | '/terms'
+    | '/transactions'
+    | '/withdraw'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/_authenticated' | '/login' | '/register'
-  id: '__root__' | '/' | '/_authenticated' | '/login' | '/register'
+  to:
+    | '/'
+    | '/_authenticated'
+    | '/about'
+    | '/admin'
+    | '/dashboard'
+    | '/deposit'
+    | '/invite'
+    | '/login'
+    | '/register'
+    | '/robots'
+    | '/settings'
+    | '/team'
+    | '/terms'
+    | '/transactions'
+    | '/withdraw'
+  id:
+    | '__root__'
+    | '/'
+    | '/_authenticated'
+    | '/about'
+    | '/admin'
+    | '/dashboard'
+    | '/deposit'
+    | '/invite'
+    | '/login'
+    | '/register'
+    | '/robots'
+    | '/settings'
+    | '/team'
+    | '/terms'
+    | '/transactions'
+    | '/withdraw'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   Char91_authenticatedChar93Route: typeof Char91_authenticatedChar93Route
+  AboutRoute: typeof AboutRoute
+  AdminRoute: typeof AdminRoute
+  DashboardRoute: typeof DashboardRoute
+  DepositRoute: typeof DepositRoute
+  InviteRoute: typeof InviteRoute
   LoginRoute: typeof LoginRoute
   RegisterRoute: typeof RegisterRoute
+  RobotsRoute: typeof RobotsRoute
+  SettingsRoute: typeof SettingsRoute
+  TeamRoute: typeof TeamRoute
+  TermsRoute: typeof TermsRoute
+  TransactionsRoute: typeof TransactionsRoute
+  WithdrawRoute: typeof WithdrawRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/withdraw': {
+      id: '/withdraw'
+      path: '/withdraw'
+      fullPath: '/withdraw'
+      preLoaderRoute: typeof WithdrawRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/transactions': {
+      id: '/transactions'
+      path: '/transactions'
+      fullPath: '/transactions'
+      preLoaderRoute: typeof TransactionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team': {
+      id: '/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/robots': {
+      id: '/robots'
+      path: '/robots'
+      fullPath: '/robots'
+      preLoaderRoute: typeof RobotsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/register': {
       id: '/register'
       path: '/register'
@@ -84,6 +282,41 @@ declare module '@tanstack/react-router' {
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/invite': {
+      id: '/invite'
+      path: '/invite'
+      fullPath: '/invite'
+      preLoaderRoute: typeof InviteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/deposit': {
+      id: '/deposit'
+      path: '/deposit'
+      fullPath: '/deposit'
+      preLoaderRoute: typeof DepositRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated': {
@@ -106,8 +339,19 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   Char91_authenticatedChar93Route: Char91_authenticatedChar93Route,
+  AboutRoute: AboutRoute,
+  AdminRoute: AdminRoute,
+  DashboardRoute: DashboardRoute,
+  DepositRoute: DepositRoute,
+  InviteRoute: InviteRoute,
   LoginRoute: LoginRoute,
   RegisterRoute: RegisterRoute,
+  RobotsRoute: RobotsRoute,
+  SettingsRoute: SettingsRoute,
+  TeamRoute: TeamRoute,
+  TermsRoute: TermsRoute,
+  TransactionsRoute: TransactionsRoute,
+  WithdrawRoute: WithdrawRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
