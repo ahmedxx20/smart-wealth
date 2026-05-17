@@ -14,6 +14,27 @@ export type Database = {
   }
   public: {
     Tables: {
+      deposit_address_rotation: {
+        Row: {
+          addresses: string[]
+          current_index: number
+          id: number
+          rotated_at: string
+        }
+        Insert: {
+          addresses?: string[]
+          current_index?: number
+          id?: number
+          rotated_at?: string
+        }
+        Update: {
+          addresses?: string[]
+          current_index?: number
+          id?: number
+          rotated_at?: string
+        }
+        Relationships: []
+      }
       deposits: {
         Row: {
           address: string
@@ -297,6 +318,13 @@ export type Database = {
       }
       approve_deposit: { Args: { p_id: string }; Returns: undefined }
       approve_withdrawal: { Args: { p_id: string }; Returns: undefined }
+      get_current_deposit_address: {
+        Args: never
+        Returns: {
+          address: string
+          rotates_in_seconds: number
+        }[]
+      }
       is_admin: { Args: { _uid: string }; Returns: boolean }
       reject_deposit: {
         Args: { p_id: string; p_reason: string }
